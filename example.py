@@ -9,6 +9,9 @@ from aspose_barcode_cloud import (
     EncodeBarcodeType,
     CodeLocation,
     DecodeBarcodeType,
+    QREncodeMode,
+    QRErrorLevel,
+    QRVersion,
 )
 
 config = Configuration(
@@ -19,7 +22,15 @@ config = Configuration(
 
 # Generate barcode
 generateApi = GenerateApi(ApiClient(config))
-response = generateApi.generate(EncodeBarcodeType.QR, "Example", text_location=CodeLocation.NONE)
+response = generateApi.generate(
+    EncodeBarcodeType.QR,
+    "Example",
+    text_location=CodeLocation.NONE,
+    qr_encode_mode=QREncodeMode.AUTO,
+    qr_error_level=QRErrorLevel.LEVELM,
+    qr_version=QRVersion.AUTO,
+    qr_aspect_ratio=0.75,
+)
 with open("example.png", "wb") as f:
     f.write(response.data)
 print("Barcode saved to file 'example.png'")

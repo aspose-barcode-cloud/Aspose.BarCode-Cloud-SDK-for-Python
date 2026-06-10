@@ -58,7 +58,7 @@ class EncodeData(object):
     def data(self):
         """Gets the data of this EncodeData.  # noqa: E501
 
-        String represents data to encode  # noqa: E501
+        String that represents the data to encode.  # noqa: E501
 
         :return: The data of this EncodeData.  # noqa: E501
         :rtype: str
@@ -69,7 +69,7 @@ class EncodeData(object):
     def data(self, data):
         """Sets the data of this EncodeData.
 
-        String represents data to encode  # noqa: E501
+        String that represents the data to encode.  # noqa: E501
 
         :param data: The data of this EncodeData.  # noqa: E501
         :type: str

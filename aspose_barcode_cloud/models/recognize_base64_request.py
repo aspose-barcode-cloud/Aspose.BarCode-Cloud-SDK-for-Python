@@ -54,7 +54,7 @@ class RecognizeBase64Request(object):
     def barcode_types(self):
         """Gets the barcode_types of this RecognizeBase64Request.  # noqa: E501
 
-        Array of decode types to find on barcode  # noqa: E501
+        Array of barcode decode types to find.  # noqa: E501
 
         :return: The barcode_types of this RecognizeBase64Request.  # noqa: E501
         :rtype: List[DecodeBarcodeType]
@@ -65,7 +65,7 @@ class RecognizeBase64Request(object):
     def barcode_types(self, barcode_types):
         """Sets the barcode_types of this RecognizeBase64Request.
 
-        Array of decode types to find on barcode  # noqa: E501
+        Array of barcode decode types to find.  # noqa: E501
 
         :param barcode_types: The barcode_types of this RecognizeBase64Request.  # noqa: E501
         :type: List[DecodeBarcodeType]

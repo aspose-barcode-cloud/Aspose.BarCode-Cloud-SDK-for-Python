@@ -23,17 +23,17 @@ class RecognizeApi(object):
     def recognize(
         self, barcode_type, file_url, recognition_mode=None, recognition_image_kind=None, async_req=False, **kwargs
     ):
-        """Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
+        """Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use `recognize-body` or `recognize-multipart` endpoints instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = RecognizeApi().recognize(barcode_type, file_url, async_req=True)
         >>> result = thread.get()
 
-        :param DecodeBarcodeType barcode_type: Type of barcode to recognize # noqa: E501
-        :param str file_url: Url to barcode image # noqa: E501
-        :param RecognitionMode recognition_mode: Recognition mode # noqa: E501
-        :param RecognitionImageKind recognition_image_kind: Image kind for recognition # noqa: E501
+        :param DecodeBarcodeType barcode_type: Type of barcode to recognize. # noqa: E501
+        :param str file_url: URL to the barcode image. # noqa: E501
+        :param RecognitionMode recognition_mode: Recognition mode. # noqa: E501
+        :param RecognitionImageKind recognition_image_kind: Image kind for recognition. # noqa: E501
         :param async_req bool
         :return: BarcodeResponseList
                  If the method is called asynchronously,
@@ -59,15 +59,15 @@ class RecognizeApi(object):
             return data
 
     def recognize_with_http_info(self, barcode_type, file_url, **kwargs):
-        """Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
+        """Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use `recognize-body` or `recognize-multipart` endpoints instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = RecognizeApi().recognize_with_http_info(barcode_type, file_url, async_req=True)
         >>> result = thread.get()
 
-        :param DecodeBarcodeType barcode_type: Type of barcode to recognize # noqa: E501
-        :param str file_url: Url to barcode image # noqa: E501
+        :param DecodeBarcodeType barcode_type: Type of barcode to recognize. # noqa: E501
+        :param str file_url: URL to the barcode image. # noqa: E501
         :return: BarcodeResponseList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -137,14 +137,14 @@ class RecognizeApi(object):
         )
 
     def recognize_base64(self, recognize_base64_request, async_req=False, **kwargs):
-        """Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+        """Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = RecognizeApi().recognize_base64(recognize_base64_request, async_req=True)
         >>> result = thread.get()
 
-        :param RecognizeBase64Request recognize_base64_request: Barcode recognition request # noqa: E501
+        :param RecognizeBase64Request recognize_base64_request: Barcode recognition request. # noqa: E501
         :param async_req bool
         :return: BarcodeResponseList
                  If the method is called asynchronously,
@@ -158,14 +158,14 @@ class RecognizeApi(object):
             return data
 
     def recognize_base64_with_http_info(self, recognize_base64_request, **kwargs):
-        """Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+        """Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = RecognizeApi().recognize_base64_with_http_info(recognize_base64_request, async_req=True)
         >>> result = thread.get()
 
-        :param RecognizeBase64Request recognize_base64_request: Barcode recognition request # noqa: E501
+        :param RecognizeBase64Request recognize_base64_request: Barcode recognition request. # noqa: E501
         :return: BarcodeResponseList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -235,7 +235,7 @@ class RecognizeApi(object):
     def recognize_multipart(
         self, barcode_type, file, recognition_mode=None, recognition_image_kind=None, async_req=False, **kwargs
     ):
-        """Recognize barcode from file in request body using POST requests with parameters in multipart form.
+        """Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -243,7 +243,7 @@ class RecognizeApi(object):
         >>> result = thread.get()
 
         :param DecodeBarcodeType barcode_type: # noqa: E501
-        :param bytearray file: Barcode image file # noqa: E501
+        :param bytearray file: Barcode image file. # noqa: E501
         :param RecognitionMode recognition_mode: # noqa: E501
         :param RecognitionImageKind recognition_image_kind: # noqa: E501
         :param async_req bool
@@ -271,7 +271,7 @@ class RecognizeApi(object):
             return data
 
     def recognize_multipart_with_http_info(self, barcode_type, file, **kwargs):
-        """Recognize barcode from file in request body using POST requests with parameters in multipart form.
+        """Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -279,7 +279,7 @@ class RecognizeApi(object):
         >>> result = thread.get()
 
         :param DecodeBarcodeType barcode_type: # noqa: E501
-        :param bytearray file: Barcode image file # noqa: E501
+        :param bytearray file: Barcode image file. # noqa: E501
         :return: BarcodeResponseList
                  If the method is called asynchronously,
                  returns the request thread.

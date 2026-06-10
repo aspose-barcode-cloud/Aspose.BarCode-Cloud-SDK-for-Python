@@ -22,26 +22,49 @@ class GenerateParams(object):
         "barcode_type": "EncodeBarcodeType",
         "encode_data": "EncodeData",
         "barcode_image_params": "BarcodeImageParams",
+        "qr_params": "QrParams",
+        "code128_params": "Code128Params",
+        "pdf417_params": "Pdf417Params",
     }
 
     attribute_map = {
         "barcode_type": "barcodeType",
         "encode_data": "encodeData",
         "barcode_image_params": "barcodeImageParams",
+        "qr_params": "qrParams",
+        "code128_params": "code128Params",
+        "pdf417_params": "pdf417Params",
     }
 
-    def __init__(self, barcode_type=None, encode_data=None, barcode_image_params=None):  # noqa: E501
+    def __init__(
+        self,
+        barcode_type=None,
+        encode_data=None,
+        barcode_image_params=None,
+        qr_params=None,
+        code128_params=None,
+        pdf417_params=None,
+    ):  # noqa: E501
         """GenerateParams - a model defined in Swagger"""  # noqa: E501
 
         self._barcode_type = None
         self._encode_data = None
         self._barcode_image_params = None
+        self._qr_params = None
+        self._code128_params = None
+        self._pdf417_params = None
         self.discriminator = None
 
         self.barcode_type = barcode_type
         self.encode_data = encode_data
         if barcode_image_params is not None:
             self.barcode_image_params = barcode_image_params
+        if qr_params is not None:
+            self.qr_params = qr_params
+        if code128_params is not None:
+            self.code128_params = code128_params
+        if pdf417_params is not None:
+            self.pdf417_params = pdf417_params
 
     @property
     def barcode_type(self):
@@ -109,6 +132,69 @@ class GenerateParams(object):
         """
 
         self._barcode_image_params = barcode_image_params
+
+    @property
+    def qr_params(self):
+        """Gets the qr_params of this GenerateParams.  # noqa: E501
+
+
+        :return: The qr_params of this GenerateParams.  # noqa: E501
+        :rtype: QrParams
+        """
+        return self._qr_params
+
+    @qr_params.setter
+    def qr_params(self, qr_params):
+        """Sets the qr_params of this GenerateParams.
+
+
+        :param qr_params: The qr_params of this GenerateParams.  # noqa: E501
+        :type: QrParams
+        """
+
+        self._qr_params = qr_params
+
+    @property
+    def code128_params(self):
+        """Gets the code128_params of this GenerateParams.  # noqa: E501
+
+
+        :return: The code128_params of this GenerateParams.  # noqa: E501
+        :rtype: Code128Params
+        """
+        return self._code128_params
+
+    @code128_params.setter
+    def code128_params(self, code128_params):
+        """Sets the code128_params of this GenerateParams.
+
+
+        :param code128_params: The code128_params of this GenerateParams.  # noqa: E501
+        :type: Code128Params
+        """
+
+        self._code128_params = code128_params
+
+    @property
+    def pdf417_params(self):
+        """Gets the pdf417_params of this GenerateParams.  # noqa: E501
+
+
+        :return: The pdf417_params of this GenerateParams.  # noqa: E501
+        :rtype: Pdf417Params
+        """
+        return self._pdf417_params
+
+    @pdf417_params.setter
+    def pdf417_params(self, pdf417_params):
+        """Sets the pdf417_params of this GenerateParams.
+
+
+        :param pdf417_params: The pdf417_params of this GenerateParams.  # noqa: E501
+        :type: Pdf417Params
+        """
+
+        self._pdf417_params = pdf417_params
 
     def to_dict(self):
         """Returns the model properties as a dict"""
