@@ -78,6 +78,7 @@ class QrParams(object):
     def qr_encode_mode(self):
         """Gets the qr_encode_mode of this QrParams.  # noqa: E501
 
+        QR barcode encode mode.  # noqa: E501
 
         :return: The qr_encode_mode of this QrParams.  # noqa: E501
         :rtype: QREncodeMode
@@ -88,6 +89,7 @@ class QrParams(object):
     def qr_encode_mode(self, qr_encode_mode):
         """Sets the qr_encode_mode of this QrParams.
 
+        QR barcode encode mode.  # noqa: E501
 
         :param qr_encode_mode: The qr_encode_mode of this QrParams.  # noqa: E501
         :type: QREncodeMode
@@ -99,6 +101,7 @@ class QrParams(object):
     def qr_error_level(self):
         """Gets the qr_error_level of this QrParams.  # noqa: E501
 
+        QR barcode error correction level.  # noqa: E501
 
         :return: The qr_error_level of this QrParams.  # noqa: E501
         :rtype: QRErrorLevel
@@ -109,6 +112,7 @@ class QrParams(object):
     def qr_error_level(self, qr_error_level):
         """Sets the qr_error_level of this QrParams.
 
+        QR barcode error correction level.  # noqa: E501
 
         :param qr_error_level: The qr_error_level of this QrParams.  # noqa: E501
         :type: QRErrorLevel
@@ -120,6 +124,7 @@ class QrParams(object):
     def qr_version(self):
         """Gets the qr_version of this QrParams.  # noqa: E501
 
+        QR barcode version. Automatically selects the smallest version that fits the data.  # noqa: E501
 
         :return: The qr_version of this QrParams.  # noqa: E501
         :rtype: QRVersion
@@ -130,6 +135,7 @@ class QrParams(object):
     def qr_version(self, qr_version):
         """Sets the qr_version of this QrParams.
 
+        QR barcode version. Automatically selects the smallest version that fits the data.  # noqa: E501
 
         :param qr_version: The qr_version of this QrParams.  # noqa: E501
         :type: QRVersion
@@ -141,6 +147,7 @@ class QrParams(object):
     def qr_eci_encoding(self):
         """Gets the qr_eci_encoding of this QrParams.  # noqa: E501
 
+        ECI encoding for QR barcode data.  # noqa: E501
 
         :return: The qr_eci_encoding of this QrParams.  # noqa: E501
         :rtype: ECIEncodings
@@ -151,6 +158,7 @@ class QrParams(object):
     def qr_eci_encoding(self, qr_eci_encoding):
         """Sets the qr_eci_encoding of this QrParams.
 
+        ECI encoding for QR barcode data.  # noqa: E501
 
         :param qr_eci_encoding: The qr_eci_encoding of this QrParams.  # noqa: E501
         :type: ECIEncodings
@@ -193,6 +201,7 @@ class QrParams(object):
     def micro_qr_version(self):
         """Gets the micro_qr_version of this QrParams.  # noqa: E501
 
+        MicroQR barcode version. Used when BarcodeType is MicroQR.  # noqa: E501
 
         :return: The micro_qr_version of this QrParams.  # noqa: E501
         :rtype: MicroQRVersion
@@ -203,6 +212,7 @@ class QrParams(object):
     def micro_qr_version(self, micro_qr_version):
         """Sets the micro_qr_version of this QrParams.
 
+        MicroQR barcode version. Used when BarcodeType is MicroQR.  # noqa: E501
 
         :param micro_qr_version: The micro_qr_version of this QrParams.  # noqa: E501
         :type: MicroQRVersion
@@ -214,6 +224,7 @@ class QrParams(object):
     def rect_micro_qr_version(self):
         """Gets the rect_micro_qr_version of this QrParams.  # noqa: E501
 
+        RectMicroQR barcode version. Used when BarcodeType is RectMicroQR.  # noqa: E501
 
         :return: The rect_micro_qr_version of this QrParams.  # noqa: E501
         :rtype: RectMicroQRVersion
@@ -224,6 +235,7 @@ class QrParams(object):
     def rect_micro_qr_version(self, rect_micro_qr_version):
         """Sets the rect_micro_qr_version of this QrParams.
 
+        RectMicroQR barcode version. Used when BarcodeType is RectMicroQR.  # noqa: E501
 
         :param rect_micro_qr_version: The rect_micro_qr_version of this QrParams.  # noqa: E501
         :type: RectMicroQRVersion

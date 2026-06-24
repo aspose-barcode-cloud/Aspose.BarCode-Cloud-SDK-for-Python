@@ -37,6 +37,7 @@ class EncodeData(object):
     def data_type(self):
         """Gets the data_type of this EncodeData.  # noqa: E501
 
+        Type of data to encode. Default value: StringData.  # noqa: E501
 
         :return: The data_type of this EncodeData.  # noqa: E501
         :rtype: EncodeDataType
@@ -47,6 +48,7 @@ class EncodeData(object):
     def data_type(self, data_type):
         """Sets the data_type of this EncodeData.
 
+        Type of data to encode. Default value: StringData.  # noqa: E501
 
         :param data_type: The data_type of this EncodeData.  # noqa: E501
         :type: EncodeDataType

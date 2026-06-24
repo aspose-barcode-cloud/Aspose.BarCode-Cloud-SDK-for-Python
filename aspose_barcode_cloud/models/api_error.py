@@ -153,6 +153,7 @@ class ApiError(object):
     def inner_error(self):
         """Gets the inner_error of this ApiError.  # noqa: E501
 
+        Gets or sets inner error.  # noqa: E501
 
         :return: The inner_error of this ApiError.  # noqa: E501
         :rtype: ApiError
@@ -163,6 +164,7 @@ class ApiError(object):
     def inner_error(self, inner_error):
         """Sets the inner_error of this ApiError.
 
+        Gets or sets inner error.  # noqa: E501
 
         :param inner_error: The inner_error of this ApiError.  # noqa: E501
         :type: ApiError

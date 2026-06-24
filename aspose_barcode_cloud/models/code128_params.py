@@ -35,6 +35,7 @@ class Code128Params(object):
     def code128_encode_mode(self):
         """Gets the code128_encode_mode of this Code128Params.  # noqa: E501
 
+        Code128 barcode encode mode. Controls which Code 128 subset (A, B, C, or mix) is used.  # noqa: E501
 
         :return: The code128_encode_mode of this Code128Params.  # noqa: E501
         :rtype: Code128EncodeMode
@@ -45,6 +46,7 @@ class Code128Params(object):
     def code128_encode_mode(self, code128_encode_mode):
         """Sets the code128_encode_mode of this Code128Params.
 
+        Code128 barcode encode mode. Controls which Code 128 subset (A, B, C, or mix) is used.  # noqa: E501
 
         :param code128_encode_mode: The code128_encode_mode of this Code128Params.  # noqa: E501
         :type: Code128EncodeMode

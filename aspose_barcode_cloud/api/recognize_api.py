@@ -242,10 +242,10 @@ class RecognizeApi(object):
         >>> thread = RecognizeApi().recognize_multipart(barcode_type, file, async_req=True)
         >>> result = thread.get()
 
-        :param DecodeBarcodeType barcode_type: # noqa: E501
+        :param DecodeBarcodeType barcode_type: See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/ # noqa: E501
         :param bytearray file: Barcode image file. # noqa: E501
-        :param RecognitionMode recognition_mode: # noqa: E501
-        :param RecognitionImageKind recognition_image_kind: # noqa: E501
+        :param RecognitionMode recognition_mode: Recognition mode. # noqa: E501
+        :param RecognitionImageKind recognition_image_kind: Image kind for recognition. # noqa: E501
         :param async_req bool
         :return: BarcodeResponseList
                  If the method is called asynchronously,
@@ -278,7 +278,7 @@ class RecognizeApi(object):
         >>> thread = RecognizeApi().recognize_multipart_with_http_info(barcode_type, file, async_req=True)
         >>> result = thread.get()
 
-        :param DecodeBarcodeType barcode_type: # noqa: E501
+        :param DecodeBarcodeType barcode_type: See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/ # noqa: E501
         :param bytearray file: Barcode image file. # noqa: E501
         :return: BarcodeResponseList
                  If the method is called asynchronously,
