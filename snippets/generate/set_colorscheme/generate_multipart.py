@@ -1,5 +1,12 @@
 import os
-from aspose_barcode_cloud import ApiClient, GenerateApi, EncodeBarcodeType, BarcodeImageFormat, Configuration
+from aspose_barcode_cloud import (
+    ApiClient,
+    GenerateApi,
+    EncodeBarcodeType,
+    BarcodeImageFormat,
+    BarcodeImageParams,
+    Configuration,
+)
 
 
 def make_configuration():
@@ -23,9 +30,11 @@ def main():
     response = generate_api.generate_multipart(
         barcode_type=EncodeBarcodeType.CODE39,
         data="Aspose",
-        foreground_color="Green",
-        background_color="Yellow",
-        image_format=BarcodeImageFormat.GIF,
+        barcode_image_params=BarcodeImageParams(
+            foreground_color="Green",
+            background_color="Yellow",
+            image_format=BarcodeImageFormat.GIF,
+        ),
     )
 
     with open(file_name, "wb") as stream:

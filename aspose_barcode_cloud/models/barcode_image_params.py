@@ -90,6 +90,7 @@ class BarcodeImageParams(object):
     def image_format(self):
         """Gets the image_format of this BarcodeImageParams.  # noqa: E501
 
+        Barcode output image format. Default value: png.  # noqa: E501
 
         :return: The image_format of this BarcodeImageParams.  # noqa: E501
         :rtype: BarcodeImageFormat
@@ -100,6 +101,7 @@ class BarcodeImageParams(object):
     def image_format(self, image_format):
         """Sets the image_format of this BarcodeImageParams.
 
+        Barcode output image format. Default value: png.  # noqa: E501
 
         :param image_format: The image_format of this BarcodeImageParams.  # noqa: E501
         :type: BarcodeImageFormat
@@ -111,6 +113,7 @@ class BarcodeImageParams(object):
     def text_location(self):
         """Gets the text_location of this BarcodeImageParams.  # noqa: E501
 
+        Specify the displayed text location. Set to CodeLocation.None to hide CodeText. Default value depends on BarcodeType: CodeLocation.Below for 1D barcodes and CodeLocation.None for 2D barcodes.  # noqa: E501
 
         :return: The text_location of this BarcodeImageParams.  # noqa: E501
         :rtype: CodeLocation
@@ -121,6 +124,7 @@ class BarcodeImageParams(object):
     def text_location(self, text_location):
         """Sets the text_location of this BarcodeImageParams.
 
+        Specify the displayed text location. Set to CodeLocation.None to hide CodeText. Default value depends on BarcodeType: CodeLocation.Below for 1D barcodes and CodeLocation.None for 2D barcodes.  # noqa: E501
 
         :param text_location: The text_location of this BarcodeImageParams.  # noqa: E501
         :type: CodeLocation
@@ -178,6 +182,7 @@ class BarcodeImageParams(object):
     def units(self):
         """Gets the units of this BarcodeImageParams.  # noqa: E501
 
+        Common units for all measurements. Default units: pixels.  # noqa: E501
 
         :return: The units of this BarcodeImageParams.  # noqa: E501
         :rtype: GraphicsUnit
@@ -188,6 +193,7 @@ class BarcodeImageParams(object):
     def units(self, units):
         """Sets the units of this BarcodeImageParams.
 
+        Common units for all measurements. Default units: pixels.  # noqa: E501
 
         :param units: The units of this BarcodeImageParams.  # noqa: E501
         :type: GraphicsUnit

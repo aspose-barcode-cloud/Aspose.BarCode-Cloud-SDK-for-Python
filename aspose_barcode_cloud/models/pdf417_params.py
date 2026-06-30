@@ -102,6 +102,7 @@ class Pdf417Params(object):
     def pdf417_encode_mode(self):
         """Gets the pdf417_encode_mode of this Pdf417Params.  # noqa: E501
 
+        PDF417 barcode encode mode.  # noqa: E501
 
         :return: The pdf417_encode_mode of this Pdf417Params.  # noqa: E501
         :rtype: Pdf417EncodeMode
@@ -112,6 +113,7 @@ class Pdf417Params(object):
     def pdf417_encode_mode(self, pdf417_encode_mode):
         """Sets the pdf417_encode_mode of this Pdf417Params.
 
+        PDF417 barcode encode mode.  # noqa: E501
 
         :param pdf417_encode_mode: The pdf417_encode_mode of this Pdf417Params.  # noqa: E501
         :type: Pdf417EncodeMode
@@ -123,6 +125,7 @@ class Pdf417Params(object):
     def pdf417_error_level(self):
         """Gets the pdf417_error_level of this Pdf417Params.  # noqa: E501
 
+        PDF417 barcode error correction level.  # noqa: E501
 
         :return: The pdf417_error_level of this Pdf417Params.  # noqa: E501
         :rtype: Pdf417ErrorLevel
@@ -133,6 +136,7 @@ class Pdf417Params(object):
     def pdf417_error_level(self, pdf417_error_level):
         """Sets the pdf417_error_level of this Pdf417Params.
 
+        PDF417 barcode error correction level.  # noqa: E501
 
         :param pdf417_error_level: The pdf417_error_level of this Pdf417Params.  # noqa: E501
         :type: Pdf417ErrorLevel
@@ -260,6 +264,7 @@ class Pdf417Params(object):
     def pdf417_eci_encoding(self):
         """Gets the pdf417_eci_encoding of this Pdf417Params.  # noqa: E501
 
+        ECI encoding for PDF417 barcode data.  # noqa: E501
 
         :return: The pdf417_eci_encoding of this Pdf417Params.  # noqa: E501
         :rtype: ECIEncodings
@@ -270,6 +275,7 @@ class Pdf417Params(object):
     def pdf417_eci_encoding(self, pdf417_eci_encoding):
         """Sets the pdf417_eci_encoding of this Pdf417Params.
 
+        ECI encoding for PDF417 barcode data.  # noqa: E501
 
         :param pdf417_eci_encoding: The pdf417_eci_encoding of this Pdf417Params.  # noqa: E501
         :type: ECIEncodings
@@ -304,6 +310,7 @@ class Pdf417Params(object):
     def pdf417_macro_characters(self):
         """Gets the pdf417_macro_characters of this Pdf417Params.  # noqa: E501
 
+        Macro character to prepend (structured append).  # noqa: E501
 
         :return: The pdf417_macro_characters of this Pdf417Params.  # noqa: E501
         :rtype: MacroCharacter
@@ -314,6 +321,7 @@ class Pdf417Params(object):
     def pdf417_macro_characters(self, pdf417_macro_characters):
         """Sets the pdf417_macro_characters of this Pdf417Params.
 
+        Macro character to prepend (structured append).  # noqa: E501
 
         :param pdf417_macro_characters: The pdf417_macro_characters of this Pdf417Params.  # noqa: E501
         :type: MacroCharacter

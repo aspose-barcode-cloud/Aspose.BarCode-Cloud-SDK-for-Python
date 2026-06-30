@@ -70,6 +70,7 @@ class GenerateParams(object):
     def barcode_type(self):
         """Gets the barcode_type of this GenerateParams.  # noqa: E501
 
+        Barcode type.  # noqa: E501
 
         :return: The barcode_type of this GenerateParams.  # noqa: E501
         :rtype: EncodeBarcodeType
@@ -80,6 +81,7 @@ class GenerateParams(object):
     def barcode_type(self, barcode_type):
         """Sets the barcode_type of this GenerateParams.
 
+        Barcode type.  # noqa: E501
 
         :param barcode_type: The barcode_type of this GenerateParams.  # noqa: E501
         :type: EncodeBarcodeType
@@ -93,6 +95,7 @@ class GenerateParams(object):
     def encode_data(self):
         """Gets the encode_data of this GenerateParams.  # noqa: E501
 
+        Data to encode into a barcode.  # noqa: E501
 
         :return: The encode_data of this GenerateParams.  # noqa: E501
         :rtype: EncodeData
@@ -103,6 +106,7 @@ class GenerateParams(object):
     def encode_data(self, encode_data):
         """Sets the encode_data of this GenerateParams.
 
+        Data to encode into a barcode.  # noqa: E501
 
         :param encode_data: The encode_data of this GenerateParams.  # noqa: E501
         :type: EncodeData
@@ -116,6 +120,7 @@ class GenerateParams(object):
     def barcode_image_params(self):
         """Gets the barcode_image_params of this GenerateParams.  # noqa: E501
 
+        Optional barcode image parameters.  # noqa: E501
 
         :return: The barcode_image_params of this GenerateParams.  # noqa: E501
         :rtype: BarcodeImageParams
@@ -126,6 +131,7 @@ class GenerateParams(object):
     def barcode_image_params(self, barcode_image_params):
         """Sets the barcode_image_params of this GenerateParams.
 
+        Optional barcode image parameters.  # noqa: E501
 
         :param barcode_image_params: The barcode_image_params of this GenerateParams.  # noqa: E501
         :type: BarcodeImageParams
@@ -137,6 +143,7 @@ class GenerateParams(object):
     def qr_params(self):
         """Gets the qr_params of this GenerateParams.  # noqa: E501
 
+        Optional QR barcode generation parameters.  # noqa: E501
 
         :return: The qr_params of this GenerateParams.  # noqa: E501
         :rtype: QrParams
@@ -147,6 +154,7 @@ class GenerateParams(object):
     def qr_params(self, qr_params):
         """Sets the qr_params of this GenerateParams.
 
+        Optional QR barcode generation parameters.  # noqa: E501
 
         :param qr_params: The qr_params of this GenerateParams.  # noqa: E501
         :type: QrParams
@@ -158,6 +166,7 @@ class GenerateParams(object):
     def code128_params(self):
         """Gets the code128_params of this GenerateParams.  # noqa: E501
 
+        Optional Code128 barcode generation parameters.  # noqa: E501
 
         :return: The code128_params of this GenerateParams.  # noqa: E501
         :rtype: Code128Params
@@ -168,6 +177,7 @@ class GenerateParams(object):
     def code128_params(self, code128_params):
         """Sets the code128_params of this GenerateParams.
 
+        Optional Code128 barcode generation parameters.  # noqa: E501
 
         :param code128_params: The code128_params of this GenerateParams.  # noqa: E501
         :type: Code128Params
@@ -179,6 +189,7 @@ class GenerateParams(object):
     def pdf417_params(self):
         """Gets the pdf417_params of this GenerateParams.  # noqa: E501
 
+        Optional PDF417 barcode generation parameters.  # noqa: E501
 
         :return: The pdf417_params of this GenerateParams.  # noqa: E501
         :rtype: Pdf417Params
@@ -189,6 +200,7 @@ class GenerateParams(object):
     def pdf417_params(self, pdf417_params):
         """Sets the pdf417_params of this GenerateParams.
 
+        Optional PDF417 barcode generation parameters.  # noqa: E501
 
         :param pdf417_params: The pdf417_params of this GenerateParams.  # noqa: E501
         :type: Pdf417Params

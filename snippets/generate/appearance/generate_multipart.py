@@ -1,5 +1,15 @@
 import os
-from aspose_barcode_cloud import ApiClient, EncodeBarcodeType, BarcodeImageFormat, CodeLocation, Configuration
+from aspose_barcode_cloud import (
+    ApiClient,
+    EncodeBarcodeType,
+    BarcodeImageFormat,
+    BarcodeImageParams,
+    CodeLocation,
+    Configuration,
+    Pdf417Params,
+    Pdf417EncodeMode,
+    Pdf417ErrorLevel,
+)
 from aspose_barcode_cloud.api.generate_api import GenerateApi
 
 
@@ -25,8 +35,15 @@ def main():
     response = generate_api.generate_multipart(
         barcode_type=EncodeBarcodeType.PDF417,
         data="Aspose.BarCode.Cloud",
-        text_location=CodeLocation.ABOVE,
-        image_format=BarcodeImageFormat.SVG,
+        barcode_image_params=BarcodeImageParams(
+            text_location=CodeLocation.ABOVE,
+            image_format=BarcodeImageFormat.SVG,
+        ),
+        pdf417_params=Pdf417Params(
+            pdf417_encode_mode=Pdf417EncodeMode.AUTO,
+            pdf417_error_level=Pdf417ErrorLevel.LEVEL2,
+            pdf417_aspect_ratio=3,
+        ),
     )
 
     with open(file_name, "wb") as stream:
