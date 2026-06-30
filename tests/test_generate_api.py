@@ -61,7 +61,10 @@ class TestGenerateApi(unittest.TestCase):
         """
 
         response = self.api.generate_multipart(
-            EncodeBarcodeType.QR, "54657374", EncodeDataType.HEXBYTES, background_color="0xffe"
+            EncodeBarcodeType.QR,
+            "54657374",
+            EncodeDataType.HEXBYTES,
+            barcode_image_params=BarcodeImageParams(background_color="0xffe"),
         )
 
         content_length = int(response.headers["content-length"])

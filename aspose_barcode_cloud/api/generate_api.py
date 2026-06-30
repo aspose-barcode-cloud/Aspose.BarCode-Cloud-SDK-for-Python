@@ -25,19 +25,14 @@ class GenerateApi(object):
         barcode_type,
         data,
         data_type=None,
-        image_format=None,
-        text_location=None,
-        foreground_color="Black",
-        background_color="White",
-        units=None,
-        resolution=None,
-        image_height=None,
-        image_width=None,
-        rotation_angle=None,
+        barcode_image_params=None,
+        qr_params=None,
+        code128_params=None,
+        pdf417_params=None,
         async_req=False,
         **kwargs
     ):
-        """Generate barcode using GET request with parameters in route and query string.
+        """Generate a barcode using a GET request with parameters in the route and query string.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -45,17 +40,12 @@ class GenerateApi(object):
         >>> result = thread.get()
 
         :param EncodeBarcodeType barcode_type: Type of barcode to generate. # noqa: E501
-        :param str data: String represents data to encode # noqa: E501
+        :param str data: String that represents the data to encode. # noqa: E501
         :param EncodeDataType data_type: Type of data to encode. Default value: StringData. # noqa: E501
-        :param BarcodeImageFormat image_format: Barcode output image format. Default value: png # noqa: E501
-        :param CodeLocation text_location: Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D Barcodes. # noqa: E501
-        :param str foreground_color: Specify the displaying bars and content Color. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: Black. # noqa: E501
-        :param str background_color: Background color of the barcode image. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: White. # noqa: E501
-        :param GraphicsUnit units: Common Units for all measuring in query. Default units: pixel. # noqa: E501
-        :param float resolution: Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. Decimal separator is dot. # noqa: E501
-        :param float image_height: Height of the barcode image in given units. Default units: pixel. Decimal separator is dot. # noqa: E501
-        :param float image_width: Width of the barcode image in given units. Default units: pixel. Decimal separator is dot. # noqa: E501
-        :param int rotation_angle: BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0. # noqa: E501
+        :param BarcodeImageParams barcode_image_params: Grouped BarcodeImageParams parameters. # noqa: E501
+        :param QrParams qr_params: Grouped QrParams parameters. # noqa: E501
+        :param Code128Params code128_params: Grouped Code128Params parameters. # noqa: E501
+        :param Pdf417Params pdf417_params: Grouped Pdf417Params parameters. # noqa: E501
         :param async_req bool
         :return: bytearray
                  If the method is called asynchronously,
@@ -67,15 +57,10 @@ class GenerateApi(object):
                 barcode_type,
                 data,
                 data_type=data_type,
-                image_format=image_format,
-                text_location=text_location,
-                foreground_color=foreground_color,
-                background_color=background_color,
-                units=units,
-                resolution=resolution,
-                image_height=image_height,
-                image_width=image_width,
-                rotation_angle=rotation_angle,
+                barcode_image_params=barcode_image_params,
+                qr_params=qr_params,
+                code128_params=code128_params,
+                pdf417_params=pdf417_params,
                 **kwargs
             )
         else:
@@ -83,21 +68,16 @@ class GenerateApi(object):
                 barcode_type,
                 data,
                 data_type=data_type,
-                image_format=image_format,
-                text_location=text_location,
-                foreground_color=foreground_color,
-                background_color=background_color,
-                units=units,
-                resolution=resolution,
-                image_height=image_height,
-                image_width=image_width,
-                rotation_angle=rotation_angle,
+                barcode_image_params=barcode_image_params,
+                qr_params=qr_params,
+                code128_params=code128_params,
+                pdf417_params=pdf417_params,
                 **kwargs
             )
             return data
 
     def generate_with_http_info(self, barcode_type, data, **kwargs):
-        """Generate barcode using GET request with parameters in route and query string.
+        """Generate a barcode using a GET request with parameters in the route and query string.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -105,7 +85,7 @@ class GenerateApi(object):
         >>> result = thread.get()
 
         :param EncodeBarcodeType barcode_type: Type of barcode to generate. # noqa: E501
-        :param str data: String represents data to encode # noqa: E501
+        :param str data: String that represents the data to encode. # noqa: E501
         :return: bytearray
                  If the method is called asynchronously,
                  returns the request thread.
@@ -115,15 +95,10 @@ class GenerateApi(object):
             "barcode_type",
             "data",
             "data_type",
-            "image_format",
-            "text_location",
-            "foreground_color",
-            "background_color",
-            "units",
-            "resolution",
-            "image_height",
-            "image_width",
-            "rotation_angle",
+            "barcode_image_params",
+            "qr_params",
+            "code128_params",
+            "pdf417_params",
         }
         all_params.add("async_req")
         all_params.add("_return_http_data_only")
@@ -139,6 +114,62 @@ class GenerateApi(object):
 
             params[key] = val
         del params["kwargs"]
+        if "barcode_image_params" in params and params["barcode_image_params"].image_format is not None:
+            params["image_format"] = params["barcode_image_params"].image_format
+        if "barcode_image_params" in params and params["barcode_image_params"].text_location is not None:
+            params["text_location"] = params["barcode_image_params"].text_location
+        if "barcode_image_params" in params and params["barcode_image_params"].foreground_color is not None:
+            params["foreground_color"] = params["barcode_image_params"].foreground_color
+        if "barcode_image_params" in params and params["barcode_image_params"].background_color is not None:
+            params["background_color"] = params["barcode_image_params"].background_color
+        if "barcode_image_params" in params and params["barcode_image_params"].units is not None:
+            params["units"] = params["barcode_image_params"].units
+        if "barcode_image_params" in params and params["barcode_image_params"].resolution is not None:
+            params["resolution"] = params["barcode_image_params"].resolution
+        if "barcode_image_params" in params and params["barcode_image_params"].image_height is not None:
+            params["image_height"] = params["barcode_image_params"].image_height
+        if "barcode_image_params" in params and params["barcode_image_params"].image_width is not None:
+            params["image_width"] = params["barcode_image_params"].image_width
+        if "barcode_image_params" in params and params["barcode_image_params"].rotation_angle is not None:
+            params["rotation_angle"] = params["barcode_image_params"].rotation_angle
+        if "qr_params" in params and params["qr_params"].qr_encode_mode is not None:
+            params["qr_encode_mode"] = params["qr_params"].qr_encode_mode
+        if "qr_params" in params and params["qr_params"].qr_error_level is not None:
+            params["qr_error_level"] = params["qr_params"].qr_error_level
+        if "qr_params" in params and params["qr_params"].qr_version is not None:
+            params["qr_version"] = params["qr_params"].qr_version
+        if "qr_params" in params and params["qr_params"].qr_eci_encoding is not None:
+            params["qr_eci_encoding"] = params["qr_params"].qr_eci_encoding
+        if "qr_params" in params and params["qr_params"].qr_aspect_ratio is not None:
+            params["qr_aspect_ratio"] = params["qr_params"].qr_aspect_ratio
+        if "qr_params" in params and params["qr_params"].micro_qr_version is not None:
+            params["micro_qr_version"] = params["qr_params"].micro_qr_version
+        if "qr_params" in params and params["qr_params"].rect_micro_qr_version is not None:
+            params["rect_micro_qr_version"] = params["qr_params"].rect_micro_qr_version
+        if "code128_params" in params and params["code128_params"].code128_encode_mode is not None:
+            params["code128_encode_mode"] = params["code128_params"].code128_encode_mode
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_encode_mode is not None:
+            params["pdf417_encode_mode"] = params["pdf417_params"].pdf417_encode_mode
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_error_level is not None:
+            params["pdf417_error_level"] = params["pdf417_params"].pdf417_error_level
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_truncate is not None:
+            params["pdf417_truncate"] = params["pdf417_params"].pdf417_truncate
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_columns is not None:
+            params["pdf417_columns"] = params["pdf417_params"].pdf417_columns
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_rows is not None:
+            params["pdf417_rows"] = params["pdf417_params"].pdf417_rows
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_aspect_ratio is not None:
+            params["pdf417_aspect_ratio"] = params["pdf417_params"].pdf417_aspect_ratio
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_eci_encoding is not None:
+            params["pdf417_eci_encoding"] = params["pdf417_params"].pdf417_eci_encoding
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_is_reader_initialization is not None:
+            params["pdf417_is_reader_initialization"] = params["pdf417_params"].pdf417_is_reader_initialization
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_macro_characters is not None:
+            params["pdf417_macro_characters"] = params["pdf417_params"].pdf417_macro_characters
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_is_linked is not None:
+            params["pdf417_is_linked"] = params["pdf417_params"].pdf417_is_linked
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_is_code128_emulation is not None:
+            params["pdf417_is_code128_emulation"] = params["pdf417_params"].pdf417_is_code128_emulation
         # verify the required parameter "barcode_type" is set
         if "barcode_type" not in params or params["barcode_type"] is None:
             raise ValueError("Missing the required parameter 'barcode_type' when calling 'generate'")
@@ -153,6 +184,38 @@ class GenerateApi(object):
         if "resolution" in params and params["resolution"] < 1:
             raise ValueError(
                 "Invalid value for parameter 'resolution' when calling 'generate', must be a value greater than or equal to '1'"
+            )
+        if "qr_aspect_ratio" in params and params["qr_aspect_ratio"] > 1:
+            raise ValueError(
+                "Invalid value for parameter 'qr_aspect_ratio' when calling 'generate', must be a value less than or equal to '1'"
+            )
+        if "qr_aspect_ratio" in params and params["qr_aspect_ratio"] < 0.001:
+            raise ValueError(
+                "Invalid value for parameter 'qr_aspect_ratio' when calling 'generate', must be a value greater than or equal to '0.001'"
+            )
+        if "pdf417_columns" in params and params["pdf417_columns"] > 30:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_columns' when calling 'generate', must be a value less than or equal to '30'"
+            )
+        if "pdf417_columns" in params and params["pdf417_columns"] < 0:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_columns' when calling 'generate', must be a value greater than or equal to '0'"
+            )
+        if "pdf417_rows" in params and params["pdf417_rows"] > 90:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_rows' when calling 'generate', must be a value less than or equal to '90'"
+            )
+        if "pdf417_rows" in params and params["pdf417_rows"] < 0:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_rows' when calling 'generate', must be a value greater than or equal to '0'"
+            )
+        if "pdf417_aspect_ratio" in params and params["pdf417_aspect_ratio"] > 10:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_aspect_ratio' when calling 'generate', must be a value less than or equal to '10'"
+            )
+        if "pdf417_aspect_ratio" in params and params["pdf417_aspect_ratio"] < 2:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_aspect_ratio' when calling 'generate', must be a value greater than or equal to '2'"
             )
         collection_formats = {}
 
@@ -183,6 +246,44 @@ class GenerateApi(object):
             query_params.append(("imageWidth", params["image_width"]))
         if "rotation_angle" in params:
             query_params.append(("rotationAngle", params["rotation_angle"]))
+        if "qr_encode_mode" in params:
+            query_params.append(("qrEncodeMode", params["qr_encode_mode"]))
+        if "qr_error_level" in params:
+            query_params.append(("qrErrorLevel", params["qr_error_level"]))
+        if "qr_version" in params:
+            query_params.append(("qrVersion", params["qr_version"]))
+        if "qr_eci_encoding" in params:
+            query_params.append(("qrECIEncoding", params["qr_eci_encoding"]))
+        if "qr_aspect_ratio" in params:
+            query_params.append(("qrAspectRatio", params["qr_aspect_ratio"]))
+        if "micro_qr_version" in params:
+            query_params.append(("microQRVersion", params["micro_qr_version"]))
+        if "rect_micro_qr_version" in params:
+            query_params.append(("rectMicroQrVersion", params["rect_micro_qr_version"]))
+        if "code128_encode_mode" in params:
+            query_params.append(("code128EncodeMode", params["code128_encode_mode"]))
+        if "pdf417_encode_mode" in params:
+            query_params.append(("pdf417EncodeMode", params["pdf417_encode_mode"]))
+        if "pdf417_error_level" in params:
+            query_params.append(("pdf417ErrorLevel", params["pdf417_error_level"]))
+        if "pdf417_truncate" in params:
+            query_params.append(("pdf417Truncate", params["pdf417_truncate"]))
+        if "pdf417_columns" in params:
+            query_params.append(("pdf417Columns", params["pdf417_columns"]))
+        if "pdf417_rows" in params:
+            query_params.append(("pdf417Rows", params["pdf417_rows"]))
+        if "pdf417_aspect_ratio" in params:
+            query_params.append(("pdf417AspectRatio", params["pdf417_aspect_ratio"]))
+        if "pdf417_eci_encoding" in params:
+            query_params.append(("pdf417ECIEncoding", params["pdf417_eci_encoding"]))
+        if "pdf417_is_reader_initialization" in params:
+            query_params.append(("pdf417IsReaderInitialization", params["pdf417_is_reader_initialization"]))
+        if "pdf417_macro_characters" in params:
+            query_params.append(("pdf417MacroCharacters", params["pdf417_macro_characters"]))
+        if "pdf417_is_linked" in params:
+            query_params.append(("pdf417IsLinked", params["pdf417_is_linked"]))
+        if "pdf417_is_code128_emulation" in params:
+            query_params.append(("pdf417IsCode128Emulation", params["pdf417_is_code128_emulation"]))
 
         header_params = {}
 
@@ -223,14 +324,14 @@ class GenerateApi(object):
         )
 
     def generate_body(self, generate_params, async_req=False, **kwargs):
-        """Generate barcode using POST request with parameters in body in json or xml format.
+        """Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = GenerateApi().generate_body(generate_params, async_req=True)
         >>> result = thread.get()
 
-        :param GenerateParams generate_params: Parameters of generation # noqa: E501
+        :param GenerateParams generate_params: Generation parameters. # noqa: E501
         :param async_req bool
         :return: bytearray
                  If the method is called asynchronously,
@@ -244,14 +345,14 @@ class GenerateApi(object):
             return data
 
     def generate_body_with_http_info(self, generate_params, **kwargs):
-        """Generate barcode using POST request with parameters in body in json or xml format.
+        """Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = GenerateApi().generate_body_with_http_info(generate_params, async_req=True)
         >>> result = thread.get()
 
-        :param GenerateParams generate_params: Parameters of generation # noqa: E501
+        :param GenerateParams generate_params: Generation parameters. # noqa: E501
         :return: bytearray
                  If the method is called asynchronously,
                  returns the request thread.
@@ -332,37 +433,27 @@ class GenerateApi(object):
         barcode_type,
         data,
         data_type=None,
-        image_format=None,
-        text_location=None,
-        foreground_color="Black",
-        background_color="White",
-        units=None,
-        resolution=None,
-        image_height=None,
-        image_width=None,
-        rotation_angle=None,
+        barcode_image_params=None,
+        qr_params=None,
+        code128_params=None,
+        pdf417_params=None,
         async_req=False,
         **kwargs
     ):
-        """Generate barcode using POST request with parameters in multipart form.
+        """Generate a barcode using a POST request with parameters in a multipart form.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = GenerateApi().generate_multipart(barcode_type, data, async_req=True)
         >>> result = thread.get()
 
-        :param EncodeBarcodeType barcode_type: # noqa: E501
-        :param str data: String represents data to encode # noqa: E501
-        :param EncodeDataType data_type: # noqa: E501
-        :param BarcodeImageFormat image_format: # noqa: E501
-        :param CodeLocation text_location: # noqa: E501
-        :param str foreground_color: Specify the displaying bars and content Color. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: Black. # noqa: E501
-        :param str background_color: Background color of the barcode image. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: White. # noqa: E501
-        :param GraphicsUnit units: # noqa: E501
-        :param float resolution: Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. Decimal separator is dot. # noqa: E501
-        :param float image_height: Height of the barcode image in given units. Default units: pixel. Decimal separator is dot. # noqa: E501
-        :param float image_width: Width of the barcode image in given units. Default units: pixel. Decimal separator is dot. # noqa: E501
-        :param int rotation_angle: BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0. # noqa: E501
+        :param EncodeBarcodeType barcode_type: See https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/ # noqa: E501
+        :param str data: String that represents the data to encode. # noqa: E501
+        :param EncodeDataType data_type: Type of data to encode. Default value: StringData. # noqa: E501
+        :param BarcodeImageParams barcode_image_params: Grouped BarcodeImageParams parameters. # noqa: E501
+        :param QrParams qr_params: Grouped QrParams parameters. # noqa: E501
+        :param Code128Params code128_params: Grouped Code128Params parameters. # noqa: E501
+        :param Pdf417Params pdf417_params: Grouped Pdf417Params parameters. # noqa: E501
         :param async_req bool
         :return: bytearray
                  If the method is called asynchronously,
@@ -374,15 +465,10 @@ class GenerateApi(object):
                 barcode_type,
                 data,
                 data_type=data_type,
-                image_format=image_format,
-                text_location=text_location,
-                foreground_color=foreground_color,
-                background_color=background_color,
-                units=units,
-                resolution=resolution,
-                image_height=image_height,
-                image_width=image_width,
-                rotation_angle=rotation_angle,
+                barcode_image_params=barcode_image_params,
+                qr_params=qr_params,
+                code128_params=code128_params,
+                pdf417_params=pdf417_params,
                 **kwargs
             )
         else:
@@ -390,29 +476,24 @@ class GenerateApi(object):
                 barcode_type,
                 data,
                 data_type=data_type,
-                image_format=image_format,
-                text_location=text_location,
-                foreground_color=foreground_color,
-                background_color=background_color,
-                units=units,
-                resolution=resolution,
-                image_height=image_height,
-                image_width=image_width,
-                rotation_angle=rotation_angle,
+                barcode_image_params=barcode_image_params,
+                qr_params=qr_params,
+                code128_params=code128_params,
+                pdf417_params=pdf417_params,
                 **kwargs
             )
             return data
 
     def generate_multipart_with_http_info(self, barcode_type, data, **kwargs):
-        """Generate barcode using POST request with parameters in multipart form.
+        """Generate a barcode using a POST request with parameters in a multipart form.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = GenerateApi().generate_multipart_with_http_info(barcode_type, data, async_req=True)
         >>> result = thread.get()
 
-        :param EncodeBarcodeType barcode_type: # noqa: E501
-        :param str data: String represents data to encode # noqa: E501
+        :param EncodeBarcodeType barcode_type: See https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/ # noqa: E501
+        :param str data: String that represents the data to encode. # noqa: E501
         :return: bytearray
                  If the method is called asynchronously,
                  returns the request thread.
@@ -422,15 +503,10 @@ class GenerateApi(object):
             "barcode_type",
             "data",
             "data_type",
-            "image_format",
-            "text_location",
-            "foreground_color",
-            "background_color",
-            "units",
-            "resolution",
-            "image_height",
-            "image_width",
-            "rotation_angle",
+            "barcode_image_params",
+            "qr_params",
+            "code128_params",
+            "pdf417_params",
         }
         all_params.add("async_req")
         all_params.add("_return_http_data_only")
@@ -446,6 +522,62 @@ class GenerateApi(object):
 
             params[key] = val
         del params["kwargs"]
+        if "barcode_image_params" in params and params["barcode_image_params"].image_format is not None:
+            params["image_format"] = params["barcode_image_params"].image_format
+        if "barcode_image_params" in params and params["barcode_image_params"].text_location is not None:
+            params["text_location"] = params["barcode_image_params"].text_location
+        if "barcode_image_params" in params and params["barcode_image_params"].foreground_color is not None:
+            params["foreground_color"] = params["barcode_image_params"].foreground_color
+        if "barcode_image_params" in params and params["barcode_image_params"].background_color is not None:
+            params["background_color"] = params["barcode_image_params"].background_color
+        if "barcode_image_params" in params and params["barcode_image_params"].units is not None:
+            params["units"] = params["barcode_image_params"].units
+        if "barcode_image_params" in params and params["barcode_image_params"].resolution is not None:
+            params["resolution"] = params["barcode_image_params"].resolution
+        if "barcode_image_params" in params and params["barcode_image_params"].image_height is not None:
+            params["image_height"] = params["barcode_image_params"].image_height
+        if "barcode_image_params" in params and params["barcode_image_params"].image_width is not None:
+            params["image_width"] = params["barcode_image_params"].image_width
+        if "barcode_image_params" in params and params["barcode_image_params"].rotation_angle is not None:
+            params["rotation_angle"] = params["barcode_image_params"].rotation_angle
+        if "qr_params" in params and params["qr_params"].qr_encode_mode is not None:
+            params["qr_encode_mode"] = params["qr_params"].qr_encode_mode
+        if "qr_params" in params and params["qr_params"].qr_error_level is not None:
+            params["qr_error_level"] = params["qr_params"].qr_error_level
+        if "qr_params" in params and params["qr_params"].qr_version is not None:
+            params["qr_version"] = params["qr_params"].qr_version
+        if "qr_params" in params and params["qr_params"].qr_eci_encoding is not None:
+            params["qr_eci_encoding"] = params["qr_params"].qr_eci_encoding
+        if "qr_params" in params and params["qr_params"].qr_aspect_ratio is not None:
+            params["qr_aspect_ratio"] = params["qr_params"].qr_aspect_ratio
+        if "qr_params" in params and params["qr_params"].micro_qr_version is not None:
+            params["micro_qr_version"] = params["qr_params"].micro_qr_version
+        if "qr_params" in params and params["qr_params"].rect_micro_qr_version is not None:
+            params["rect_micro_qr_version"] = params["qr_params"].rect_micro_qr_version
+        if "code128_params" in params and params["code128_params"].code128_encode_mode is not None:
+            params["code128_encode_mode"] = params["code128_params"].code128_encode_mode
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_encode_mode is not None:
+            params["pdf417_encode_mode"] = params["pdf417_params"].pdf417_encode_mode
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_error_level is not None:
+            params["pdf417_error_level"] = params["pdf417_params"].pdf417_error_level
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_truncate is not None:
+            params["pdf417_truncate"] = params["pdf417_params"].pdf417_truncate
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_columns is not None:
+            params["pdf417_columns"] = params["pdf417_params"].pdf417_columns
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_rows is not None:
+            params["pdf417_rows"] = params["pdf417_params"].pdf417_rows
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_aspect_ratio is not None:
+            params["pdf417_aspect_ratio"] = params["pdf417_params"].pdf417_aspect_ratio
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_eci_encoding is not None:
+            params["pdf417_eci_encoding"] = params["pdf417_params"].pdf417_eci_encoding
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_is_reader_initialization is not None:
+            params["pdf417_is_reader_initialization"] = params["pdf417_params"].pdf417_is_reader_initialization
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_macro_characters is not None:
+            params["pdf417_macro_characters"] = params["pdf417_params"].pdf417_macro_characters
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_is_linked is not None:
+            params["pdf417_is_linked"] = params["pdf417_params"].pdf417_is_linked
+        if "pdf417_params" in params and params["pdf417_params"].pdf417_is_code128_emulation is not None:
+            params["pdf417_is_code128_emulation"] = params["pdf417_params"].pdf417_is_code128_emulation
         # verify the required parameter "barcode_type" is set
         if "barcode_type" not in params or params["barcode_type"] is None:
             raise ValueError("Missing the required parameter 'barcode_type' when calling 'generate_multipart'")
@@ -460,6 +592,38 @@ class GenerateApi(object):
         if "resolution" in params and params["resolution"] < 1:
             raise ValueError(
                 "Invalid value for parameter 'resolution' when calling 'generate_multipart', must be a value greater than or equal to '1'"
+            )
+        if "qr_aspect_ratio" in params and params["qr_aspect_ratio"] > 1:
+            raise ValueError(
+                "Invalid value for parameter 'qr_aspect_ratio' when calling 'generate_multipart', must be a value less than or equal to '1'"
+            )
+        if "qr_aspect_ratio" in params and params["qr_aspect_ratio"] < 0.001:
+            raise ValueError(
+                "Invalid value for parameter 'qr_aspect_ratio' when calling 'generate_multipart', must be a value greater than or equal to '0.001'"
+            )
+        if "pdf417_columns" in params and params["pdf417_columns"] > 30:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_columns' when calling 'generate_multipart', must be a value less than or equal to '30'"
+            )
+        if "pdf417_columns" in params and params["pdf417_columns"] < 0:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_columns' when calling 'generate_multipart', must be a value greater than or equal to '0'"
+            )
+        if "pdf417_rows" in params and params["pdf417_rows"] > 90:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_rows' when calling 'generate_multipart', must be a value less than or equal to '90'"
+            )
+        if "pdf417_rows" in params and params["pdf417_rows"] < 0:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_rows' when calling 'generate_multipart', must be a value greater than or equal to '0'"
+            )
+        if "pdf417_aspect_ratio" in params and params["pdf417_aspect_ratio"] > 10:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_aspect_ratio' when calling 'generate_multipart', must be a value less than or equal to '10'"
+            )
+        if "pdf417_aspect_ratio" in params and params["pdf417_aspect_ratio"] < 2:
+            raise ValueError(
+                "Invalid value for parameter 'pdf417_aspect_ratio' when calling 'generate_multipart', must be a value greater than or equal to '2'"
             )
         collection_formats = {}
 
@@ -495,6 +659,44 @@ class GenerateApi(object):
             form_params.append(("imageWidth", params["image_width"]))
         if "rotation_angle" in params:
             form_params.append(("rotationAngle", params["rotation_angle"]))
+        if "qr_encode_mode" in params:
+            form_params.append(("qrEncodeMode", params["qr_encode_mode"]))
+        if "qr_error_level" in params:
+            form_params.append(("qrErrorLevel", params["qr_error_level"]))
+        if "qr_version" in params:
+            form_params.append(("qrVersion", params["qr_version"]))
+        if "qr_eci_encoding" in params:
+            form_params.append(("qrECIEncoding", params["qr_eci_encoding"]))
+        if "qr_aspect_ratio" in params:
+            form_params.append(("qrAspectRatio", params["qr_aspect_ratio"]))
+        if "micro_qr_version" in params:
+            form_params.append(("microQRVersion", params["micro_qr_version"]))
+        if "rect_micro_qr_version" in params:
+            form_params.append(("rectMicroQrVersion", params["rect_micro_qr_version"]))
+        if "code128_encode_mode" in params:
+            form_params.append(("code128EncodeMode", params["code128_encode_mode"]))
+        if "pdf417_encode_mode" in params:
+            form_params.append(("pdf417EncodeMode", params["pdf417_encode_mode"]))
+        if "pdf417_error_level" in params:
+            form_params.append(("pdf417ErrorLevel", params["pdf417_error_level"]))
+        if "pdf417_truncate" in params:
+            form_params.append(("pdf417Truncate", params["pdf417_truncate"]))
+        if "pdf417_columns" in params:
+            form_params.append(("pdf417Columns", params["pdf417_columns"]))
+        if "pdf417_rows" in params:
+            form_params.append(("pdf417Rows", params["pdf417_rows"]))
+        if "pdf417_aspect_ratio" in params:
+            form_params.append(("pdf417AspectRatio", params["pdf417_aspect_ratio"]))
+        if "pdf417_eci_encoding" in params:
+            form_params.append(("pdf417ECIEncoding", params["pdf417_eci_encoding"]))
+        if "pdf417_is_reader_initialization" in params:
+            form_params.append(("pdf417IsReaderInitialization", params["pdf417_is_reader_initialization"]))
+        if "pdf417_macro_characters" in params:
+            form_params.append(("pdf417MacroCharacters", params["pdf417_macro_characters"]))
+        if "pdf417_is_linked" in params:
+            form_params.append(("pdf417IsLinked", params["pdf417_is_linked"]))
+        if "pdf417_is_code128_emulation" in params:
+            form_params.append(("pdf417IsCode128Emulation", params["pdf417_is_code128_emulation"]))
 
         body_params = None
         # HTTP header "Accept"

@@ -54,7 +54,7 @@ class RecognizeBase64Request(object):
     def barcode_types(self):
         """Gets the barcode_types of this RecognizeBase64Request.  # noqa: E501
 
-        Array of decode types to find on barcode  # noqa: E501
+        Array of barcode decode types to find.  # noqa: E501
 
         :return: The barcode_types of this RecognizeBase64Request.  # noqa: E501
         :rtype: List[DecodeBarcodeType]
@@ -65,7 +65,7 @@ class RecognizeBase64Request(object):
     def barcode_types(self, barcode_types):
         """Sets the barcode_types of this RecognizeBase64Request.
 
-        Array of decode types to find on barcode  # noqa: E501
+        Array of barcode decode types to find.  # noqa: E501
 
         :param barcode_types: The barcode_types of this RecognizeBase64Request.  # noqa: E501
         :type: List[DecodeBarcodeType]
@@ -112,6 +112,7 @@ class RecognizeBase64Request(object):
     def recognition_mode(self):
         """Gets the recognition_mode of this RecognizeBase64Request.  # noqa: E501
 
+        Barcode recognition mode.  # noqa: E501
 
         :return: The recognition_mode of this RecognizeBase64Request.  # noqa: E501
         :rtype: RecognitionMode
@@ -122,6 +123,7 @@ class RecognizeBase64Request(object):
     def recognition_mode(self, recognition_mode):
         """Sets the recognition_mode of this RecognizeBase64Request.
 
+        Barcode recognition mode.  # noqa: E501
 
         :param recognition_mode: The recognition_mode of this RecognizeBase64Request.  # noqa: E501
         :type: RecognitionMode
@@ -133,6 +135,7 @@ class RecognizeBase64Request(object):
     def recognition_image_kind(self):
         """Gets the recognition_image_kind of this RecognizeBase64Request.  # noqa: E501
 
+        Image kind for recognition.  # noqa: E501
 
         :return: The recognition_image_kind of this RecognizeBase64Request.  # noqa: E501
         :rtype: RecognitionImageKind
@@ -143,6 +146,7 @@ class RecognizeBase64Request(object):
     def recognition_image_kind(self, recognition_image_kind):
         """Sets the recognition_image_kind of this RecognizeBase64Request.
 
+        Image kind for recognition.  # noqa: E501
 
         :param recognition_image_kind: The recognition_image_kind of this RecognizeBase64Request.  # noqa: E501
         :type: RecognitionImageKind

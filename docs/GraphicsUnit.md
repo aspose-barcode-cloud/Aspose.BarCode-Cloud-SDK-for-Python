@@ -1,6 +1,6 @@
 # GraphicsUnit
 
-Subset of Aspose.Drawing.GraphicsUnit.
+Subset of https://reference.aspose.com/drawing/net/system.drawing/graphicsunit/
 ## Allowable values
 
 * **GraphicsUnit.PIXEL**

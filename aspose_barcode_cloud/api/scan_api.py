@@ -21,14 +21,14 @@ class ScanApi(object):
         self.auth_settings = ["JWT"]
 
     def scan(self, file_url, async_req=False, **kwargs):
-        """Scan barcode from file on server in the Internet using GET requests with parameter in query string. For scaning files from your hard drive use `scan-body` or `scan-multipart` endpoints instead.
+        """Scan a barcode from a file on an Internet server using a GET request with a query string parameter. For scanning files from your hard drive, use `scan-body` or `scan-multipart` endpoints instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = ScanApi().scan(file_url, async_req=True)
         >>> result = thread.get()
 
-        :param str file_url: Url to barcode image # noqa: E501
+        :param str file_url: URL to the barcode image. # noqa: E501
         :param async_req bool
         :return: BarcodeResponseList
                  If the method is called asynchronously,
@@ -42,14 +42,14 @@ class ScanApi(object):
             return data
 
     def scan_with_http_info(self, file_url, **kwargs):
-        """Scan barcode from file on server in the Internet using GET requests with parameter in query string. For scaning files from your hard drive use `scan-body` or `scan-multipart` endpoints instead.
+        """Scan a barcode from a file on an Internet server using a GET request with a query string parameter. For scanning files from your hard drive, use `scan-body` or `scan-multipart` endpoints instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = ScanApi().scan_with_http_info(file_url, async_req=True)
         >>> result = thread.get()
 
-        :param str file_url: Url to barcode image # noqa: E501
+        :param str file_url: URL to the barcode image. # noqa: E501
         :return: BarcodeResponseList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -110,14 +110,14 @@ class ScanApi(object):
         )
 
     def scan_base64(self, scan_base64_request, async_req=False, **kwargs):
-        """Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+        """Scan a barcode from a file in the request body using a POST request with a JSON or XML body parameter.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = ScanApi().scan_base64(scan_base64_request, async_req=True)
         >>> result = thread.get()
 
-        :param ScanBase64Request scan_base64_request: Barcode scan request # noqa: E501
+        :param ScanBase64Request scan_base64_request: Barcode scan request. # noqa: E501
         :param async_req bool
         :return: BarcodeResponseList
                  If the method is called asynchronously,
@@ -131,14 +131,14 @@ class ScanApi(object):
             return data
 
     def scan_base64_with_http_info(self, scan_base64_request, **kwargs):
-        """Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+        """Scan a barcode from a file in the request body using a POST request with a JSON or XML body parameter.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = ScanApi().scan_base64_with_http_info(scan_base64_request, async_req=True)
         >>> result = thread.get()
 
-        :param ScanBase64Request scan_base64_request: Barcode scan request # noqa: E501
+        :param ScanBase64Request scan_base64_request: Barcode scan request. # noqa: E501
         :return: BarcodeResponseList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -204,14 +204,14 @@ class ScanApi(object):
         )
 
     def scan_multipart(self, file, async_req=False, **kwargs):
-        """Scan barcode from file in request body using POST requests with parameter in multipart form.
+        """Scan a barcode from a file in the request body using a POST request with a multipart form parameter.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = ScanApi().scan_multipart(file, async_req=True)
         >>> result = thread.get()
 
-        :param bytearray file: Barcode image file # noqa: E501
+        :param bytearray file: Barcode image file. # noqa: E501
         :param async_req bool
         :return: BarcodeResponseList
                  If the method is called asynchronously,
@@ -225,14 +225,14 @@ class ScanApi(object):
             return data
 
     def scan_multipart_with_http_info(self, file, **kwargs):
-        """Scan barcode from file in request body using POST requests with parameter in multipart form.
+        """Scan a barcode from a file in the request body using a POST request with a multipart form parameter.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = ScanApi().scan_multipart_with_http_info(file, async_req=True)
         >>> result = thread.get()
 
-        :param bytearray file: Barcode image file # noqa: E501
+        :param bytearray file: Barcode image file. # noqa: E501
         :return: BarcodeResponseList
                  If the method is called asynchronously,
                  returns the request thread.

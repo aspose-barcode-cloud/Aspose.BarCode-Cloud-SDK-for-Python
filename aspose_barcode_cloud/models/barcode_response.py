@@ -90,7 +90,7 @@ class BarcodeResponse(object):
     def region(self):
         """Gets the region of this BarcodeResponse.  # noqa: E501
 
-        Region with barcode.  # noqa: E501
+        Region with the barcode.  # noqa: E501
 
         :return: The region of this BarcodeResponse.  # noqa: E501
         :rtype: List[RegionPoint]
@@ -101,7 +101,7 @@ class BarcodeResponse(object):
     def region(self, region):
         """Sets the region of this BarcodeResponse.
 
-        Region with barcode.  # noqa: E501
+        Region with the barcode.  # noqa: E501
 
         :param region: The region of this BarcodeResponse.  # noqa: E501
         :type: List[RegionPoint]
@@ -113,7 +113,7 @@ class BarcodeResponse(object):
     def checksum(self):
         """Gets the checksum of this BarcodeResponse.  # noqa: E501
 
-        Checksum of barcode.  # noqa: E501
+        Checksum of the barcode.  # noqa: E501
 
         :return: The checksum of this BarcodeResponse.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class BarcodeResponse(object):
     def checksum(self, checksum):
         """Sets the checksum of this BarcodeResponse.
 
-        Checksum of barcode.  # noqa: E501
+        Checksum of the barcode.  # noqa: E501
 
         :param checksum: The checksum of this BarcodeResponse.  # noqa: E501
         :type: str

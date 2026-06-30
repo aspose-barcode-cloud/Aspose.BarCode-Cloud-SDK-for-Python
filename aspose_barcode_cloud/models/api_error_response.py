@@ -61,6 +61,7 @@ class ApiErrorResponse(object):
     def error(self):
         """Gets the error of this ApiErrorResponse.  # noqa: E501
 
+        Gets or sets error.  # noqa: E501
 
         :return: The error of this ApiErrorResponse.  # noqa: E501
         :rtype: ApiError
@@ -71,6 +72,7 @@ class ApiErrorResponse(object):
     def error(self, error):
         """Sets the error of this ApiErrorResponse.
 
+        Gets or sets error.  # noqa: E501
 
         :param error: The error of this ApiErrorResponse.  # noqa: E501
         :type: ApiError

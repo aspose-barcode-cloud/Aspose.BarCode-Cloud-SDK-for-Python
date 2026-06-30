@@ -4,15 +4,15 @@ All URIs are relative to *https://api.aspose.cloud/v4.0*
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**recognize**](RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
-[**recognize_base64**](RecognizeApi.md#recognize_base64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-[**recognize_multipart**](RecognizeApi.md#recognize_multipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+[**recognize**](RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
+[**recognize_base64**](RecognizeApi.md#recognize_base64) | **POST** /barcode/recognize-body | Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
+[**recognize_multipart**](RecognizeApi.md#recognize_multipart) | **POST** /barcode/recognize-multipart | Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
 
 
 # **recognize**
 > BarcodeResponseList recognize(barcode_type, file_url, recognition_mode=recognition_mode, recognition_image_kind=recognition_image_kind)
 
-Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
+Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use `recognize-body` or `recognize-multipart` endpoints instead.
 
 ### Example
 ```python
@@ -26,13 +26,13 @@ configuration = aspose_barcode_cloud.Configuration(access_token="YOUR_ACCESS_TOK
 
 # create an instance of the API class
 api_instance = aspose_barcode_cloud.RecognizeApi(aspose_barcode_cloud.ApiClient(configuration))
-barcode_type = aspose_barcode_cloud.DecodeBarcodeType() # DecodeBarcodeType | Type of barcode to recognize
-file_url = 'file_url_example' # str | Url to barcode image
-recognition_mode = aspose_barcode_cloud.RecognitionMode() # RecognitionMode | Recognition mode (optional)
-recognition_image_kind = aspose_barcode_cloud.RecognitionImageKind() # RecognitionImageKind | Image kind for recognition (optional)
+barcode_type = aspose_barcode_cloud.DecodeBarcodeType() # DecodeBarcodeType | Type of barcode to recognize.
+file_url = 'file_url_example' # str | URL to the barcode image.
+recognition_mode = aspose_barcode_cloud.RecognitionMode() # RecognitionMode | Recognition mode. (optional)
+recognition_image_kind = aspose_barcode_cloud.RecognitionImageKind() # RecognitionImageKind | Image kind for recognition. (optional)
 
 try:
-    # Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
+    # Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use `recognize-body` or `recognize-multipart` endpoints instead.
     api_response = api_instance.recognize(barcode_type, file_url, recognition_mode=recognition_mode, recognition_image_kind=recognition_image_kind)
     pprint(api_response)
 except ApiException as e:
@@ -43,10 +43,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **barcode_type** | [**DecodeBarcodeType**](.md)| Type of barcode to recognize | 
- **file_url** | **str**| Url to barcode image | 
- **recognition_mode** | [**RecognitionMode**](.md)| Recognition mode | [optional] 
- **recognition_image_kind** | [**RecognitionImageKind**](.md)| Image kind for recognition | [optional] 
+ **barcode_type** | [**DecodeBarcodeType**](.md)| Type of barcode to recognize. | 
+ **file_url** | **str**| URL to the barcode image. | 
+ **recognition_mode** | [**RecognitionMode**](.md)| Recognition mode. | [optional] 
+ **recognition_image_kind** | [**RecognitionImageKind**](.md)| Image kind for recognition. | [optional] 
 
 ### Return type
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 # **recognize_base64**
 > BarcodeResponseList recognize_base64(recognize_base64_request)
 
-Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
 
 ### Example
 ```python
@@ -80,10 +80,10 @@ configuration = aspose_barcode_cloud.Configuration(access_token="YOUR_ACCESS_TOK
 
 # create an instance of the API class
 api_instance = aspose_barcode_cloud.RecognizeApi(aspose_barcode_cloud.ApiClient(configuration))
-recognize_base64_request = aspose_barcode_cloud.RecognizeBase64Request() # RecognizeBase64Request | Barcode recognition request
+recognize_base64_request = aspose_barcode_cloud.RecognizeBase64Request() # RecognizeBase64Request | Barcode recognition request.
 
 try:
-    # Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+    # Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
     api_response = api_instance.recognize_base64(recognize_base64_request)
     pprint(api_response)
 except ApiException as e:
@@ -94,7 +94,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **recognize_base64_request** | [**RecognizeBase64Request**](RecognizeBase64Request.md)| Barcode recognition request | 
+ **recognize_base64_request** | [**RecognizeBase64Request**](RecognizeBase64Request.md)| Barcode recognition request. | 
 
 ### Return type
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 # **recognize_multipart**
 > BarcodeResponseList recognize_multipart(barcode_type, file, recognition_mode=recognition_mode, recognition_image_kind=recognition_image_kind)
 
-Recognize barcode from file in request body using POST requests with parameters in multipart form.
+Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
 
 ### Example
 ```python
@@ -128,13 +128,13 @@ configuration = aspose_barcode_cloud.Configuration(access_token="YOUR_ACCESS_TOK
 
 # create an instance of the API class
 api_instance = aspose_barcode_cloud.RecognizeApi(aspose_barcode_cloud.ApiClient(configuration))
-barcode_type = aspose_barcode_cloud.DecodeBarcodeType() # DecodeBarcodeType | 
-file = None # bytearray | Barcode image file
-recognition_mode = aspose_barcode_cloud.RecognitionMode() # RecognitionMode |  (optional)
-recognition_image_kind = aspose_barcode_cloud.RecognitionImageKind() # RecognitionImageKind |  (optional)
+barcode_type = aspose_barcode_cloud.DecodeBarcodeType() # DecodeBarcodeType | See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/
+file = None # bytearray | Barcode image file.
+recognition_mode = aspose_barcode_cloud.RecognitionMode() # RecognitionMode | Recognition mode. (optional)
+recognition_image_kind = aspose_barcode_cloud.RecognitionImageKind() # RecognitionImageKind | Image kind for recognition. (optional)
 
 try:
-    # Recognize barcode from file in request body using POST requests with parameters in multipart form.
+    # Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
     api_response = api_instance.recognize_multipart(barcode_type, file, recognition_mode=recognition_mode, recognition_image_kind=recognition_image_kind)
     pprint(api_response)
 except ApiException as e:
@@ -145,10 +145,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **barcode_type** | [**DecodeBarcodeType**](DecodeBarcodeType.md)|  | 
- **file** | **bytearray**| Barcode image file | 
- **recognition_mode** | [**RecognitionMode**](RecognitionMode.md)|  | [optional] 
- **recognition_image_kind** | [**RecognitionImageKind**](RecognitionImageKind.md)|  | [optional] 
+ **barcode_type** | [**DecodeBarcodeType**](DecodeBarcodeType.md)| See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/ | 
+ **file** | **bytearray**| Barcode image file. | 
+ **recognition_mode** | [**RecognitionMode**](RecognitionMode.md)| Recognition mode. | [optional] 
+ **recognition_image_kind** | [**RecognitionImageKind**](RecognitionImageKind.md)| Image kind for recognition. | [optional] 
 
 ### Return type
 
