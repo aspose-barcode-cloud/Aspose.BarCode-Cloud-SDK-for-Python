@@ -1,5 +1,5 @@
 import os
-from aspose_barcode_cloud import ApiClient, EncodeBarcodeType, BarcodeImageFormat, Configuration
+from aspose_barcode_cloud import ApiClient, EncodeBarcodeType, BarcodeImageFormat, BarcodeImageParams, Configuration
 from aspose_barcode_cloud.api.generate_api import GenerateApi
 
 
@@ -26,9 +26,11 @@ def main():
     response = generate_api.generate(
         EncodeBarcodeType.QR,
         "https://products.aspose.cloud/barcode/family/",
-        foreground_color="DarkBlue",
-        background_color="LightGray",
-        image_format=BarcodeImageFormat.PNG,
+        barcode_image_params=BarcodeImageParams(
+            foreground_color="DarkBlue",
+            background_color="LightGray",
+            image_format=BarcodeImageFormat.PNG,
+        ),
     )
 
     # Write the response to a file

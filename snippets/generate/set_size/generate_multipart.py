@@ -1,5 +1,5 @@
 import os
-from aspose_barcode_cloud import ApiClient, EncodeBarcodeType, Configuration, GraphicsUnit
+from aspose_barcode_cloud import ApiClient, BarcodeImageParams, EncodeBarcodeType, Configuration, GraphicsUnit
 from aspose_barcode_cloud.api.generate_api import GenerateApi
 
 
@@ -25,10 +25,12 @@ def main():
     response = api.generate_multipart(
         barcode_type=EncodeBarcodeType.AZTEC,
         data="Aspose.BarCode.Cloud",
-        image_height=200,
-        image_width=200,
-        resolution=150,
-        units=GraphicsUnit.POINT,
+        barcode_image_params=BarcodeImageParams(
+            image_height=200,
+            image_width=200,
+            resolution=150,
+            units=GraphicsUnit.POINT,
+        ),
     )
     with open(file_name, "wb") as file_stream:
         file_stream.write(response.data)

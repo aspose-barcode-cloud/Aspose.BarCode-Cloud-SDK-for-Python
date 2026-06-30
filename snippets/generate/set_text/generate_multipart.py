@@ -1,6 +1,13 @@
 import os
 
-from aspose_barcode_cloud import ApiClient, EncodeBarcodeType, EncodeDataType, Configuration
+from aspose_barcode_cloud import (
+    ApiClient,
+    Code128Params,
+    Code128EncodeMode,
+    EncodeBarcodeType,
+    EncodeDataType,
+    Configuration,
+)
 from aspose_barcode_cloud.api.generate_api import GenerateApi
 
 
@@ -23,7 +30,10 @@ def main():
     generate_api = GenerateApi(api_client=api_client)
 
     response = generate_api.generate_multipart(
-        EncodeBarcodeType.CODE128, "4173706F73652E426172436F64652E436C6F7564", EncodeDataType.HEXBYTES
+        EncodeBarcodeType.CODE128,
+        "4173706F73652E426172436F64652E436C6F7564",
+        data_type=EncodeDataType.HEXBYTES,
+        code128_params=Code128Params(code128_encode_mode=Code128EncodeMode.AUTO),
     )
 
     with open(file_name, "wb") as stream:

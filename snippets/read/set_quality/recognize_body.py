@@ -5,6 +5,7 @@ from aspose_barcode_cloud import (
     ApiClient,
     Configuration,
     DecodeBarcodeType,
+    RecognitionMode,
     RecognizeBase64Request,
 )
 
@@ -31,7 +32,11 @@ def main():
         image_bytes = file.read()
         image_base64 = base64.b64encode(image_bytes).decode("utf-8")
 
-    request = RecognizeBase64Request(barcode_types=[DecodeBarcodeType.PDF417], file_base64=image_base64)
+    request = RecognizeBase64Request(
+        barcode_types=[DecodeBarcodeType.PDF417],
+        file_base64=image_base64,
+        recognition_mode=RecognitionMode.EXCELLENT,
+    )
 
     result = recognize_api.recognize_base64(request)
 

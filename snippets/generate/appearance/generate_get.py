@@ -1,5 +1,16 @@
 import os
-from aspose_barcode_cloud import ApiClient, EncodeBarcodeType, BarcodeImageFormat, CodeLocation, Configuration
+from aspose_barcode_cloud import (
+    ApiClient,
+    EncodeBarcodeType,
+    BarcodeImageFormat,
+    BarcodeImageParams,
+    CodeLocation,
+    Configuration,
+    QrParams,
+    QREncodeMode,
+    QRErrorLevel,
+    QRVersion,
+)
 from aspose_barcode_cloud.api.generate_api import GenerateApi
 
 
@@ -23,13 +34,21 @@ def main():
     response = generate_api.generate(
         EncodeBarcodeType.QR,
         "Aspose.BarCode.Cloud",
-        image_format=BarcodeImageFormat.PNG,
-        foreground_color="Black",
-        background_color="White",
-        resolution=300,
-        image_height=200,
-        image_width=200,
-        text_location=CodeLocation.BELOW,
+        barcode_image_params=BarcodeImageParams(
+            image_format=BarcodeImageFormat.PNG,
+            foreground_color="Black",
+            background_color="White",
+            text_location=CodeLocation.BELOW,
+            resolution=300,
+            image_height=200,
+            image_width=200,
+        ),
+        qr_params=QrParams(
+            qr_encode_mode=QREncodeMode.AUTO,
+            qr_error_level=QRErrorLevel.LEVELM,
+            qr_version=QRVersion.AUTO,
+            qr_aspect_ratio=0.75,
+        ),
     )
 
     file_name = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "testdata", "qr.png"))
