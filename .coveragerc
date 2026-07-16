@@ -1,0 +1,10 @@
+# Coverage gate for the generated SDK.
+#
+# pytest-cov reads this file automatically for `make test` / `make cover` / tox,
+# all of which run `pytest --cov=aspose_barcode_cloud`. The build fails when line
+# coverage of the SDK drops below the 80% requirement (see the repo Agents.md).
+[run]
+source = aspose_barcode_cloud
+
+[report]
+fail_under = 80
