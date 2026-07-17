@@ -21,12 +21,16 @@ class TestScanBarcode(unittest.TestCase):
         Scan barcode from url.
         """
 
-        response = self.api.scan("https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png")
+        response = self.api.scan(
+            "https://raw.githubusercontent.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Python/main/testdata/qr_and_code128.png"
+        )
 
-        self.assertEqual(1, len(response.barcodes))
+        self.assertEqual(2, len(response.barcodes))
 
         self.assertEqual(DecodeBarcodeType.QR, response.barcodes[0].type)
-        self.assertEqual("http://en.m.wikipedia.org", response.barcodes[0].barcode_value)
+        self.assertEqual("QR text", response.barcodes[0].barcode_value)
+        self.assertEqual(DecodeBarcodeType.CODE128, response.barcodes[1].type)
+        self.assertEqual("Code128 text", response.barcodes[1].barcode_value)
 
     def test_barcode_scan_body_post(self):
         """Test case for scan_base64

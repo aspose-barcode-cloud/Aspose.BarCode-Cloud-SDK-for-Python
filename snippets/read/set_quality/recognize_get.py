@@ -27,7 +27,7 @@ def main():
 
     result = recognize_api.recognize(
         barcode_type=DecodeBarcodeType.QR,
-        file_url="https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png",
+        file_url="https://raw.githubusercontent.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Python/main/testdata/qr_and_code128.png",
         recognition_mode=RecognitionMode.FAST,
         recognition_image_kind=RecognitionImageKind.PHOTO,
     )

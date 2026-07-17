@@ -23,7 +23,7 @@ def main():
     config = make_configuration()
     recognize_api = RecognizeApi(ApiClient(config))
 
-    file_url = "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"
+    file_url = "https://raw.githubusercontent.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Python/main/testdata/qr_and_code128.png"
 
     result = recognize_api.recognize(DecodeBarcodeType.MOSTCOMMONLYUSED, file_url=file_url)
 

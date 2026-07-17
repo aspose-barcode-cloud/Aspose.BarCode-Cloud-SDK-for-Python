@@ -40,7 +40,7 @@ class TestRecognizeApi(unittest.TestCase):
 
         response = self.api.recognize(
             DecodeBarcodeType.QR,
-            "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png",
+            "https://raw.githubusercontent.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Python/main/testdata/qr_and_code128.png",
             RecognitionMode.FAST,
             RecognitionImageKind.CLEARIMAGE,
         )
@@ -48,7 +48,7 @@ class TestRecognizeApi(unittest.TestCase):
         self.assertEqual(1, len(response.barcodes))
         barcode = response.barcodes[0]
         self.assertEqual(DecodeBarcodeType.QR, barcode.type)
-        self.assertEqual("http://en.m.wikipedia.org", barcode.barcode_value)
+        self.assertEqual("QR text", barcode.barcode_value)
 
     def test_barcode_recognize_body_post(self):
         """Test case for recognize_base64
