@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/github/license/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Python)](LICENSE)
 [![Python package](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Python/actions/workflows/python-package.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Python/actions/workflows/python-package.yml)
+[![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/aspose-barcode-cloud/test-coverage/main/python/coverage-badge.json)](https://github.com/aspose-barcode-cloud/test-coverage)
 [![PyPI](https://img.shields.io/pypi/v/aspose-barcode-cloud)](https://pypi.org/project/aspose-barcode-cloud/)
 
 - API version: 4.0
