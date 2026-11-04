@@ -6,14 +6,22 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # Collect available Python versions
   get-python-versions:
+    name: Get Python versions
     runs-on: ubuntu-latest
     outputs:
       python-matrix: ${{ steps.trim.outputs.matrix }}
     steps:
-    - uses: snok/latest-python-versions@v1
+    - uses: snok/latest-python-versions@1674eb882567056bdbde1e362db522ed5e4e5124 # v1.1.2
       id: get-python-versions-action
       with:
         min-version: '3.12'
@@ -22,8 +30,10 @@ jobs:
     - name: Keep only major.minor
       id: trim
       shell: bash
+      env:
+        VERSIONS: ${{ steps.get-python-versions-action.outputs.latest-python-versions }}
       run: |
-        versions='${{ steps.get-python-versions-action.outputs.latest-python-versions }}'
+        versions="${VERSIONS}"
         # → ["3.13.5","3.12.11", ...]
         matrix=$(echo "$versions" \
                   | jq -c 'map(split(".")[:2] | join(".")) | unique')
@@ -31,6 +41,7 @@ jobs:
 
   # Use the trimmed versions list in matrix
   test:
+    name: Test
     needs: [get-python-versions]
     runs-on: ${{ matrix.operating-system }}
     strategy:
@@ -41,6 +52,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
     - name: Set up Python on ${{ matrix.operating-system }}
       uses: actions/setup-python@v6
       with:

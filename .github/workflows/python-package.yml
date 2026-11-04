@@ -9,8 +9,16 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
+    name: Build and test
     # See https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json
     # for available Python versions on ubuntu
     runs-on: ubuntu-22.04
@@ -21,6 +29,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v6
       with:
