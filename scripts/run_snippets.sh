@@ -11,7 +11,7 @@ rm -rf "${RUN_DIR}" || true
 mkdir -p "${RUN_DIR}"
 
 pushd ${RUN_DIR}
-ln -sv -F ../aspose_barcode_cloud/ .
+ln -sv ../aspose_barcode_cloud/ .
 popd
 
 for file in $(find "${SNIPPETS_DIR}" -name "*.py"); do
