@@ -1,5 +1,6 @@
 *.pyc
 .coverage
+/coverage/
 .tox/
 /.venv/
 aspose_barcode_cloud.egg-info/
