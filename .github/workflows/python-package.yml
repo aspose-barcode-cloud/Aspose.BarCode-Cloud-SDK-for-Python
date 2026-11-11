@@ -47,3 +47,43 @@ jobs:
       run: |
         chmod +x scripts/*
         make test test-example
+    - name: Upload coverage report
+      if: matrix.python-version == '3.12'
+      uses: actions/upload-artifact@v7
+      with:
+        name: coverage
+        path: |
+          coverage/coverage-badge.json
+          coverage/coverage-summary.json
+          coverage/coverage.xml
+
+  publish-coverage:
+    name: Publish coverage
+    needs: build
+    # Only pushes to the default branch publish, and only once the GitHub App for
+    # the test-coverage repository is configured (COVERAGE_APP_CLIENT_ID variable).
+    if: github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && vars.COVERAGE_APP_CLIENT_ID != ''
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
+    - uses: actions/download-artifact@v8
+      with:
+        name: coverage
+        path: coverage
+    - name: Get a token for the test-coverage repository
+      id: coverage-token
+      uses: actions/create-github-app-token@v3
+      with:
+        client-id: ${{ vars.COVERAGE_APP_CLIENT_ID }}
+        private-key: ${{ secrets.COVERAGE_APP_PRIVATE_KEY }}
+        owner: aspose-barcode-cloud
+        repositories: test-coverage
+        permission-contents: write
+    - name: Publish to test-coverage
+      run: python scripts/publish-coverage.py python
+      env:
+        COVERAGE_TOKEN: ${{ steps.coverage-token.outputs.token }}
+        COVERAGE_APP_SLUG: ${{ steps.coverage-token.outputs.app-slug }}

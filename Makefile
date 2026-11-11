@@ -62,13 +62,16 @@ publish-docker: init-docker unittest dist
 	$(PYTHON) -m twine upload dist/* --verbose
 
 .PHONY: test
-test:
-	$(PYTHON) -m pytest --cov=aspose_barcode_cloud tests/
+test: cover
 	./scripts/run_snippets.sh
 
+# pytest-cov enforces the 80% line gate (.coveragerc); the shared scripts/coverage.py
+# prints the percentage, applies COVERAGE_THRESHOLD (default 80) and writes
+# coverage/coverage-{badge,summary}.json. The HTML report is in coverage/html.
 .PHONY: cover
 cover:
-	$(PYTHON) -Werror -m pytest --cov-report html:coverage --cov=aspose_barcode_cloud tests/
+	$(PYTHON) -m pytest --cov=aspose_barcode_cloud --cov-report=term --cov-report=xml:coverage/coverage.xml --cov-report=html:coverage/html tests/
+	$(PYTHON) scripts/coverage.py cobertura coverage/coverage.xml
 
 .PHONY: unittest
 unittest:
