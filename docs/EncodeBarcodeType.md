@@ -76,5 +76,6 @@ See https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetyp
 * EncodeBarcodeType.UPCAGS1CODE128COUPON
 * EncodeBarcodeType.UPCAGS1DATABARCOUPON
 * EncodeBarcodeType.VIN
+* EncodeBarcodeType.JAPANPOST
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

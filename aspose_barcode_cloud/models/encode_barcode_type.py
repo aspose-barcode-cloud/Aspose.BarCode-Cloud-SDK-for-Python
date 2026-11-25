@@ -87,6 +87,7 @@ class EncodeBarcodeType(object):
     UPCAGS1CODE128COUPON = "UpcaGs1Code128Coupon"
     UPCAGS1DATABARCOUPON = "UpcaGs1DatabarCoupon"
     VIN = "VIN"
+    JAPANPOST = "JapanPost"
 
     """
     Attributes:

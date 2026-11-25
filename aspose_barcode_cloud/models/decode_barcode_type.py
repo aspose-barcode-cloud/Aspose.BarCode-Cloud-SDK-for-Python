@@ -98,6 +98,7 @@ class DecodeBarcodeType(object):
     UPCA = "UPCA"
     UPCE = "UPCE"
     VIN = "VIN"
+    JAPANPOST = "JapanPost"
 
     """
     Attributes:

@@ -87,5 +87,6 @@ See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/d
 * DecodeBarcodeType.UPCA
 * DecodeBarcodeType.UPCE
 * DecodeBarcodeType.VIN
+* DecodeBarcodeType.JAPANPOST
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
