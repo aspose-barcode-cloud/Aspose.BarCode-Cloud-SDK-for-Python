@@ -16,6 +16,7 @@ from aspose_barcode_cloud.models import (
     BarcodeImageParams,
     BarcodeResponse,
     BarcodeResponseList,
+    BatchArchiveFormat,
     Code128EncodeMode,
     Code128Params,
     CodeLocation,
@@ -45,6 +46,7 @@ from aspose_barcode_cloud.models import (
 
 ENUM_TYPES: typing.Final = (
     BarcodeImageFormat,
+    BatchArchiveFormat,
     Code128EncodeMode,
     CodeLocation,
     DecodeBarcodeType,
