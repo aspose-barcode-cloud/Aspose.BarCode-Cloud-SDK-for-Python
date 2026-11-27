@@ -5,6 +5,7 @@ All URIs are relative to *https://api.aspose.cloud/v4.0*
 Method | HTTP request | Description
 ------ | ------------ | -----------
 [**generate**](GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate a barcode using a GET request with parameters in the route and query string.
+[**generate_batch**](GenerateApi.md#generate_batch) | **POST** /barcode/generate-batch | Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
 [**generate_body**](GenerateApi.md#generate_body) | **POST** /barcode/generate-body | Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
 [**generate_multipart**](GenerateApi.md#generate_multipart) | **POST** /barcode/generate-multipart | Generate a barcode using a POST request with parameters in a multipart form.
 
@@ -114,6 +115,54 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: image/png, image/bmp, image/gif, image/jpeg, image/svg+xml, image/tiff, application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_batch**
+> bytearray generate_batch(batch_generate_request)
+
+Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+
+### Example
+```python
+import time
+import aspose_barcode_cloud
+from aspose_barcode_cloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = aspose_barcode_cloud.Configuration(access_token="YOUR_ACCESS_TOKEN")
+
+# create an instance of the API class
+api_instance = aspose_barcode_cloud.GenerateApi(aspose_barcode_cloud.ApiClient(configuration))
+batch_generate_request = aspose_barcode_cloud.BatchGenerateRequest() # BatchGenerateRequest | Batch generation request in JSON or XML format.
+
+try:
+    # Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+    api_response = api_instance.generate_batch(batch_generate_request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GenerateApi->generate_batch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+---- | ---- | ------------ | -----
+ **batch_generate_request** | [**BatchGenerateRequest**](BatchGenerateRequest.md)| Batch generation request in JSON or XML format. | 
+
+### Return type
+
+**bytearray**
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/zip, application/x-tar, application/gzip, application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

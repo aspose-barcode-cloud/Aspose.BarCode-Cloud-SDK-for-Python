@@ -2,29 +2,31 @@
 
 """Offline coverage for the generated models and enums.
 
-Mirrors the Java SDK's ``GeneratedModelCoverageTest``: it exercises the value-object
-boilerplate (constructors, property accessors, ``to_dict`` / ``to_str`` / ``__repr__`` /
-``__eq__`` / ``__ne__``) without touching the network, so the generated SDK stays above
-the 80% line-coverage gate regardless of which live API calls run.
+Exercises model value-object methods and enum wire-format compatibility without
+touching the network, so the generated SDK stays above the 80% line-coverage gate
+regardless of which live API calls run.
 """
+
+import json
+from types import SimpleNamespace
 
 import pytest
 
-from .model_factories import ENUM_TYPES, MODEL_TYPES, _enum_value, _make_model
+from .model_factories import ENUM_TYPES, MODEL_TYPES, _make_model
 
 
 @pytest.mark.parametrize("enum_type", ENUM_TYPES)
-def test_enum_value_objects(enum_type: type) -> None:
-    first = enum_type()
-    second = enum_type()
+def test_enum_constants_round_trip(enum_type: type, api_client) -> None:
+    constants = [value for name, value in vars(enum_type).items() if name.isupper()]
+    assert constants
+    assert enum_type.swagger_types == {}
 
-    assert first == second
-    assert not first != second
-    assert first != object()
-    assert first.to_dict() == {}
-    assert isinstance(first.to_str(), str)
-    assert isinstance(repr(first), str)
-    assert _enum_value(enum_type, 0)
+    for value in constants:
+        assert isinstance(value, str)
+        assert api_client.sanitize_for_serialization(value) == value
+        response = SimpleNamespace(data=json.dumps(value).encode("utf-8"))
+        assert api_client.deserialize(response, enum_type) == value
+        assert api_client.deserialize(response, enum_type.__name__) == value
 
 
 @pytest.mark.parametrize("model_type", MODEL_TYPES)

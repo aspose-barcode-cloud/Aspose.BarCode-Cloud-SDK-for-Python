@@ -20,6 +20,9 @@ from aspose_barcode_cloud.models.barcode_image_format import BarcodeImageFormat
 from aspose_barcode_cloud.models.barcode_image_params import BarcodeImageParams
 from aspose_barcode_cloud.models.barcode_response import BarcodeResponse
 from aspose_barcode_cloud.models.barcode_response_list import BarcodeResponseList
+from aspose_barcode_cloud.models.batch_archive_format import BatchArchiveFormat
+from aspose_barcode_cloud.models.batch_generate_item import BatchGenerateItem
+from aspose_barcode_cloud.models.batch_generate_request import BatchGenerateRequest
 from aspose_barcode_cloud.models.code128_encode_mode import Code128EncodeMode
 from aspose_barcode_cloud.models.code128_params import Code128Params
 from aspose_barcode_cloud.models.code_location import CodeLocation

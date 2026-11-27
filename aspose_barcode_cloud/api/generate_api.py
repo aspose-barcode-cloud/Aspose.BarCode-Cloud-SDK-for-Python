@@ -323,6 +323,102 @@ class GenerateApi(object):
             collection_formats=collection_formats,
         )
 
+    def generate_batch(self, batch_generate_request, async_req=False, **kwargs):
+        """Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = GenerateApi().generate_batch(batch_generate_request, async_req=True)
+        >>> result = thread.get()
+
+        :param BatchGenerateRequest batch_generate_request: Batch generation request in JSON or XML format. # noqa: E501
+        :param async_req bool
+        :return: bytearray
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs["_return_http_data_only"] = True
+        if async_req:
+            return self.generate_batch_with_http_info(batch_generate_request, **kwargs)
+        else:
+            data = self.generate_batch_with_http_info(batch_generate_request, **kwargs)
+            return data
+
+    def generate_batch_with_http_info(self, batch_generate_request, **kwargs):
+        """Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = GenerateApi().generate_batch_with_http_info(batch_generate_request, async_req=True)
+        >>> result = thread.get()
+
+        :param BatchGenerateRequest batch_generate_request: Batch generation request in JSON or XML format. # noqa: E501
+        :return: bytearray
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = {"batch_generate_request"}
+        all_params.add("async_req")
+        all_params.add("_return_http_data_only")
+        all_params.add("_preload_content")
+        all_params.add("_request_timeout")
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method generate_batch" % key)
+            if val is None:
+                continue
+
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "batch_generate_request" is set
+        if "batch_generate_request" not in params or params["batch_generate_request"] is None:
+            raise ValueError("Missing the required parameter 'batch_generate_request' when calling 'generate_batch'")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if "batch_generate_request" in params:
+            body_params = params["batch_generate_request"]
+        # HTTP header "Accept"
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/zip", "application/x-tar", "application/gzip", "application/json", "application/xml"]
+        )
+
+        # HTTP header "Content-Type"
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json", "application/xml"]
+        )
+
+        return self.api_client.call_api(
+            "/barcode/generate-batch",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="bytearray",
+            auth_settings=self.auth_settings,
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", False),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
+
     def generate_body(self, generate_params, async_req=False, **kwargs):
         """Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
 
